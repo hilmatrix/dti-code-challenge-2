@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'charcoal-gray' : '#333333',
+        'charcoal-gray-alpha' : '#33333355',
+        'light-gray': '#D3D3D3',
+        'light-gray-alpha': '#D3D3D355',
       },
     },
   },

@@ -1,101 +1,100 @@
-import Image from "next/image";
+import ServiceItem from "../components/serviceItem/index";
+import Testimony from "../components/testimony/index";
+import WorkItem from "../components/workItem/index";
+import { montserrat } from "../fonts/index";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  const LineSeparator = () => (
+    <div className="flex justify-center">
+        <div className="w-full bg-light-gray-alpha h-[2px] my-5"></div> 
     </div>
+  )
+
+  return (
+    <main className={`${montserrat.className}`}>
+      <section id="hero">
+          <div className="flex justify-center bg-charcoal-gray relative md:pb-[40px]">
+              <video  muted autoPlay loop className="max-w-[800px] w-full">
+                  <source src="/Hero.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+              </video>
+              <div className="w-[100%] h-[100%] z-2 bg-charcoal-gray-alpha absolute"></div>
+              <span className="absolute z-3 top-4  text-3xl md:text-4xl text-white font-semibold"><h1>Numinus Artspace</h1></span>
+              <span className="absolute z-3 top-16 text-xl md:text-2xl text-white "><h1>Crafting Imagination into Reality</h1></span>
+          </div>
+      </section>
+
+      <section id="services"> 
+        <div className="bg-light-gray h-[400px] md:min-h-[300px] flex relative justify-center p-10 flex-col md:flex-row font-semibold">
+          <span className="md:absolute md:top-4 text-xl md:text-2xl flex justify-center mb-4"><h1>Our Services</h1></span>
+          <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
+            <ServiceItem serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
+          </div>
+          <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
+            <ServiceItem serviceName="3D Arts" imageUrl="/Logo-3D.png"/>
+          </div>
+          <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
+            <ServiceItem serviceName="Game Creation" imageUrl="/Logo-Game.png"/>
+          </div>
+        </div>
+      </section>
+
+      <section id="company-overview">
+        <div className='bg-charcoal-gray p-10 text-white'>
+        <span className="text-xl md:text-2xl flex justify-center  font-semibold mb-4"><h1>Company Overview</h1></span>
+          <p>
+            Numinus Artspace is a dynamic startup based in indonesia, specializing in the creative industry.
+            We are passionate about transforming imagination into reality through a wide range of services,
+            including 2D and 3D art production, as well as game creation.</p>
+          <br></br>
+          <p>
+            Our talented team of artists and developers is dedicated into delivering top-quality creative solutions
+            that bring your vision to life. Wether it&apos;s designing captivating visual art or building immersive gaming
+            experiences, Numinus Artspace is your partner in crafting innovation and creativity.
+          </p>
+        </div>
+      </section>
+
+      <section id="works">
+        <div className="bg-light-gray flex justify-center p-10 flex-col">
+            <span className="text-xl md:text-2xl flex justify-center mb-4 font-semibold"><h1>Our Works</h1></span>
+            <WorkItem imageLink="/work-asteroid-shooter.jpg"
+              hyperLink="https://play.unity.com/en/games/c2d59a14-dbc4-40bc-9f8a-f37d92f5e3cf/asteroid-shooter"
+              workName="Asteroid Shooter"></WorkItem>
+            <WorkItem imageLink="/work-rescue-game.jpg"
+              hyperLink="https://hilmatrix-game-rescue.vercel.app/"
+              workName="Rescue Game"></WorkItem>
+        </div>
+      </section>
+
+      
+        
+      <section id="testimonials">
+          <div className='bg-charcoal-gray p-10 text-white'>
+            <span className="text-xl md:text-2xl flex justify-center  font-semibold mb-4"><h1>Testimonials</h1></span>
+            <Testimony jobTitle="Lead Developer at Skybound Games"
+              testimony="Working with Numinus Artspace has been a game-changer for our indie studio.
+              Their 3D and 2D art designs brought our game world to life in ways we couldn't imagine.
+              From concept art to detailed environment assets, everything was delivered on time and exceeded our expectations.
+              They truly understand the creative process of game development. We couldn't have asked for better collaborators!"></Testimony>
+
+             <LineSeparator/>
+
+             <Testimony jobTitle="Creative Director at Brightlight Media"
+              testimony="We partnered with Numinus Artspace for a branding campaign, and their ability to create stunning visual
+              concepts blew us away. Their team has a great eye for design and can translate vague ideas into beautiful, cohesive assets.
+              The results were polished, professional, and perfectly aligned with our brand vision. We highly recommend them to anyone
+              looking for top-notch creative services!"></Testimony>
+
+             <LineSeparator/>
+
+             <Testimony jobTitle="Lead Developer at Founder of PixelDream Studios"
+              testimony="Numinus Artspace was instrumental in designing the characters and animations for our mobile game. Their creative input,
+              attention to detail, and ability to work within our budget were impressive. They took the time to understand our project and delivered
+              a visual style that perfectly captured the fun and quirky nature of our game.
+              We can't wait to work with them on future projects!"></Testimony>
+          </div>
+      </section>
+    </main>
   );
 }
