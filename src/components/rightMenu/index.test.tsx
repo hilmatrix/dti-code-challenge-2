@@ -5,7 +5,7 @@ describe('RightMenu Component', () => {
   it('Right Menu initially should be invisible', () => {
     render(<RightMenu />);
     const rightMenu = screen.getByTestId('right-menu');
-    expect(rightMenu).toHaveClass('right-[-297px]');
+    expect(rightMenu).toHaveClass('right-[-300px]');
   });
 
   it('Right Menu should be visible after click button once', () => {
