@@ -4,10 +4,10 @@ import RightMenu from "../components/rightMenu/index";
 import ServiceItem from "../components/serviceItem/index";
 import Testimony from "../components/testimony/index";
 import WorkItem from "../components/workItem/index";
-import { montserrat } from "../fonts/index";
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import "./globals.css";
 
 config.autoAddCss = false;
 
@@ -21,7 +21,7 @@ export default function Home() {
   )
 
   return (
-    <main className={`relative ${montserrat.className}`}>
+    <main className={`relative`}>
       <section id="hero">
           <div className="flex justify-center bg-charcoal-gray relative md:pb-[40px]">
               <video  muted autoPlay loop className="max-w-[800px] w-full">

@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { montserrat } from "../../fonts/index";
 
 
 export default function Header() {
@@ -13,7 +12,7 @@ export default function Header() {
           <div className='md:absolute left-4'>
             <Image src="/Logo-Numinus-Artspace.jpg" alt="logo-numinus-artspace" width={140} height={60}></Image>
           </div>  
-          <nav className={`w-[80%] md:w-[40%] ${montserrat.className}`}>
+          <nav className={`w-[80%] md:w-[40%]`}>
             <ul className="flex text-white justify-around">
                 <li><Link href="/" className={pathname === "/" ? "underline" : ""}>Home</Link></li>
                 <li><Link href="/about-us" className={pathname === "/about-us" ? "underline" : ""}>About Us</Link></li>
