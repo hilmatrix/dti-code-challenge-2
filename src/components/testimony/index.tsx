@@ -12,24 +12,24 @@ export default function Testimony(parameters : Parameters) {
     const [name, setName] = useState("");
     const [profilePicture, setProfilePicture] = useState("");
     useEffect(() =>  {
-        try {
-            const fetchData = async() => {
+        const fetchData = async() => {
+            try {
                 const response = await axios("https://randomuser.me/api/")
                 const name = response.data.results[0].name;
                 setName(name.title + ". " + name.first + " " + name.last);
                 setProfilePicture(response.data.results[0].picture.medium)
-            };
-
-            fetchData();
-        } catch(error) {
-            setName("Error")
-        }
+            } catch(error) {
+                console.log("Error : " + error)
+            }
+        };
+        
+        fetchData();
     }, [])
     
     return (
         <div>
             <div className="italic text-justify">
-                "{parameters.testimony}"
+                &quot;{parameters.testimony}&quot;
             </div>
             <br></br>
             <div className="flex">

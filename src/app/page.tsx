@@ -1,9 +1,21 @@
+"use client"
+import Link from "next/link";
 import ServiceItem from "../components/serviceItem/index";
 import Testimony from "../components/testimony/index";
 import WorkItem from "../components/workItem/index";
 import { montserrat } from "../fonts/index";
 
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+config.autoAddCss = false;
+
+import { useState } from "react";
+
 export default function Home() {
+  const [showRightMenu, setShowRightMenu] = useState(false);
+
   const LineSeparator = () => (
     <div className="flex justify-center">
         <div className="w-full bg-light-gray-alpha h-[2px] my-5"></div> 
@@ -11,7 +23,7 @@ export default function Home() {
   )
 
   return (
-    <main className={`${montserrat.className}`}>
+    <main className={`relative ${montserrat.className}`}>
       <section id="hero">
           <div className="flex justify-center bg-charcoal-gray relative md:pb-[40px]">
               <video  muted autoPlay loop className="max-w-[800px] w-full">
@@ -95,6 +107,28 @@ export default function Home() {
               We can't wait to work with them on future projects!"></Testimony>
           </div>
       </section>
+
+      <div className="fixed right-0 top-0 z-5 w-full h-full pointer-events-none">
+
+        <div className={`absolute w-[300px] h-full  ${showRightMenu ? "right-0" : "right-[-300px]"} 
+          flex items-center transition-all duration-500 ease-in-out`}>
+          <div className={`w-full h-[400px] bg-[#000000] flex justify-center items-center`}>
+            <div className="w-[70%] h-[70%] text-white pointer-events-auto flex flex-col justify-around">
+              <Link onClick={() => {setShowRightMenu(false)}} href="#">Back to Top</Link>
+              <Link onClick={() => {setShowRightMenu(false)}} href="#services">Services</Link>
+              <Link onClick={() => {setShowRightMenu(false)}} href="#company-overview">Overview</Link>
+              <Link onClick={() => {setShowRightMenu(false)}} href="#works">Works</Link>
+              <Link onClick={() => {setShowRightMenu(false)}} href="#testimonials">Testimonials</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 right-0">
+          <button onClick={() => {setShowRightMenu(!showRightMenu)}} className="m-10 flex justify-center items-center w-20 h-20 bg-[#000000] rounded-full pointer-events-auto">
+            <FontAwesomeIcon icon={faBars} color="white" size="2x" />
+          </button>
+        </div>
+      </div>
     </main>
   );
 }

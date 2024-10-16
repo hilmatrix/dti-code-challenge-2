@@ -1,7 +1,7 @@
 export default function Services() {
     return (
         <main>
-            Services
+            Work in Progress
         </main>
     );
 }

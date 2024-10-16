@@ -1,7 +1,7 @@
 export default function AboutUs() {
     return (
         <main>
-            AboutUs
+            Work in Progress
         </main>
     );
 }

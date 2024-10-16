@@ -1,7 +1,7 @@
 export default function Teams() {
     return (
         <main>
-            Teams
+            Work in Progress
         </main>
     );
 }
