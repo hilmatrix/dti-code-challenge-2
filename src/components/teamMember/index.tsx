@@ -4,6 +4,7 @@ interface Props {
     imageUrl : string;
     name : string;
     role : string,
+    contact : string;
     description : string;
 }
 
@@ -14,9 +15,12 @@ export default function TeamMember(props : Props) {
                 <Image className="rounded-[20px]" src={props.imageUrl} alt={props.name} width={150} height={200}></Image>
             </div>
             <div className="flex-1 flex flex-col h-[100%] mx-4 justify-center text-justify">
-                <span className="h-1/8 md:h-1/5 font-semibold">{props.name}</span>
-                <span className="h-1/8 md:h-1/5 italic">{props.role}</span>
-                <span className="md:h-1/5">{props.description}</span>
+                <div className="flex flex-col">
+                    <span className="font-semibold">{props.name}</span>
+                    <span className="italic">{props.role}</span>
+                    <span className="underline">{props.contact}</span>
+                </div>
+                <span className="">{props.description}</span>
             </div>
         </div>
     );
