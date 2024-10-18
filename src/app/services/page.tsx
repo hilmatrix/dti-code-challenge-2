@@ -1,7 +1,15 @@
+import Testimony from "@/components/testimony";
 import ServiceItem from "../../components/serviceItem/index";
 import WorkItem from "../../components/workItem/index";
 
 export default function Services() {
+
+    const LineSeparator = () => (
+        <div className="flex justify-center">
+            <div className="w-full bg-light-gray-alpha h-[2px] my-5"></div> 
+        </div>
+      )
+
     return (
         <main>
             <section id="services"> 
@@ -83,9 +91,9 @@ export default function Services() {
                </div>
              </section>
 
-             <section id="service-2d">
+             <section id="service-game">
               <div className='bg-charcoal-gray p-10 text-white'>
-               <span className="text-xl md:text-2xl flex justify-center  font-semibold mb-4"><h1>2D Art Service</h1></span>
+               <span className="text-xl md:text-2xl flex justify-center  font-semibold mb-4"><h1>Game Programming Service</h1></span>
                  <p className="text-justify">
                  Our game development team specializes in building interactive, engaging games with smooth performance
                   and responsive gameplay. We handle everything from prototyping to full game deployment, ensuring your
@@ -107,6 +115,35 @@ export default function Services() {
                     <li>Performance Optimization: Starting at $500 per project (Pricing can vary based on game complexity, platform requirements, and additional features)</li>
                  </ul>
                </div>
+             </section>
+
+             <section id="testimonials">
+                 <div className='bg-light-gray p-10 text-black'>
+                   <span className="text-xl md:text-2xl flex justify-center  font-semibold mb-4"><h1>Testimonials</h1></span>
+                   <Testimony jobTitle="Indie Game Developer"
+                     testimony="Working with Numinus Artspace was an absolute pleasure! Their 2D artist and animator brought my 
+                     vision to life in ways I never imagined. The character designs were stunning, and the animations were fluid 
+                     and captivating. They perfectly captured the style I was going for, and their attention to detail was impressive. 
+                     I can't wait to collaborate with them again on future projects!"></Testimony>
+
+                    <LineSeparator/>
+       
+                    <Testimony jobTitle="Visual Effects Director"
+                     testimony="Numinus Artspace delivered exceptional 3D models and animations for my project. 
+                     The 3D artist's ability to create highly detailed characters and environments blew me away, 
+                     and the 3D animator made everything move so realistically! The level of professionalism and 
+                     quality I received far exceeded my expectations, and they were very responsive to feedback. 
+                     I highly recommend their services for anyone looking for top-tier 3D work."></Testimony>
+       
+                    <LineSeparator/>
+       
+                    <Testimony jobTitle="Studio Founder"
+                     testimony="The Numinus Artspace game programming team took my concept and turned it into a 
+                     fully functioning game in no time. Their technical expertise was evident from day one, and 
+                     they were able to implement every feature I needed, from smooth gameplay mechanics to seamless 
+                     asset integration. The communication throughout the project was excellent, and they met every 
+                     deadline without issue. I would absolutely hire them again for my next game project!"></Testimony>
+                 </div>
              </section>
         </main>
     );
