@@ -10,11 +10,11 @@ interface Props {
 
 export default function TeamMember(props : Props) {
     return (
-        <div className="flex h-[300px] md:h-[200px] m-4">
+        <div className="flex md:h-[200px] my-4">
             <div className="w-[150] flex items-center ">
                 <Image className="rounded-[20px]" src={props.imageUrl} alt={props.name} width={150} height={200}></Image>
             </div>
-            <div className="flex-1 flex flex-col h-[100%] mx-4 justify-center text-justify">
+            <div className="flex-1 flex flex-col h-[100%] ml-4 justify-center text-justify">
                 <div className="flex flex-col">
                     <span className="font-semibold">{props.name}</span>
                     <span className="italic">{props.role}</span>

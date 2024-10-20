@@ -32,7 +32,7 @@ export default function RightMenu(props : Props) {
             </div>
 
             <div className="absolute bottom-0 right-0">
-              <div className='m-10 w-[74px] h-[74px] bg-light-gray rounded-full flex justify-center items-center'>
+              <div className='m-10 mb-20 w-[74px] h-[74px] bg-light-gray rounded-full flex justify-center items-center'>
               <button data-testid="show-right-menu" onClick={() => {setShowRightMenu(!showRightMenu)}} className="flex justify-center items-center w-[70px] h-[70px] bg-[#000000] rounded-full pointer-events-auto">
                 <FontAwesomeIcon icon={faBars} color="white" size="2x" />
               </button>
