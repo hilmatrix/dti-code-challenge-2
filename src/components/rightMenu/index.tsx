@@ -1,10 +1,20 @@
+"use client"
+
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from "next/link";
 import { useState } from "react";
 
+interface Link {
+  href : string;
+  label : string;
+}
 
-export default function RightMenu() {
+interface Props {
+  links : Link[];
+}
+
+export default function RightMenu(props : Props) {
     const [showRightMenu, setShowRightMenu] = useState(false);
 
     return (
@@ -14,19 +24,19 @@ export default function RightMenu() {
               flex items-center transition-all duration-500 ease-in-out`}>
               <div className={`w-full h-[400px] bg-[#000000] flex justify-center items-center`}>
                 <div className="w-[70%] h-[70%] text-white pointer-events-auto flex flex-col justify-around">
-                  <Link onClick={() => {setShowRightMenu(false)}} href="#">Back to Top</Link>
-                  <Link onClick={() => {setShowRightMenu(false)}} href="#services">Services</Link>
-                  <Link onClick={() => {setShowRightMenu(false)}} href="#company-overview">Overview</Link>
-                  <Link onClick={() => {setShowRightMenu(false)}} href="#works">Works</Link>
-                  <Link onClick={() => {setShowRightMenu(false)}} href="#testimonials">Testimonials</Link>
+                  {props.links.map( (link, index) => (
+                    (<Link key={index} onClick={() => {setShowRightMenu(false)}} href={link.href}>{link.label}</Link>)
+                  ))}
                 </div>
               </div>
             </div>
 
             <div className="absolute bottom-0 right-0">
-              <button data-testid="show-right-menu" onClick={() => {setShowRightMenu(!showRightMenu)}} className="m-10 flex justify-center items-center w-20 h-20 bg-[#000000] rounded-full pointer-events-auto">
+              <div className='m-10 w-[74px] h-[74px] bg-light-gray rounded-full flex justify-center items-center'>
+              <button data-testid="show-right-menu" onClick={() => {setShowRightMenu(!showRightMenu)}} className="flex justify-center items-center w-[70px] h-[70px] bg-[#000000] rounded-full pointer-events-auto">
                 <FontAwesomeIcon icon={faBars} color="white" size="2x" />
               </button>
+              </div>
             </div>
         </div>
     );

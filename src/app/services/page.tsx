@@ -1,23 +1,34 @@
 import LineSeparator from "@/components/lineSeparator";
+import RightMenu from "@/components/rightMenu";
 import Section from "@/components/section";
 import Testimony from "@/components/testimony";
 import ServiceItem from "../../components/serviceItem/index";
 import WorkItem from "../../components/workItem/index";
 
 export default function Services() {
+    const links = [
+      {href : "#", label : "Back to Top"},
+      {href : "#services", label : "Our Services"},
+      {href : "#works", label : "Our Works"},
+      {href : "#service-2d", label : "2D Art Service"},
+      {href : "#service-3d", label : "3D Art Service"},
+      {href : "#service-game", label : "Game Service"},
+      {href : "#testimonials", label : "Testimonials"},
+      {href : "/", label : "Back to Home"},
+    ];
 
     return (
         <main>
             <Section id="services" title="Our Services" mode="dark"> 
               <div className="h-[400px] md:min-h-[300px] flex relative justify-center flex-col md:flex-row">
                 <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-                  <ServiceItem serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
+                  <ServiceItem href="/services#service-2d" serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
                 </div>
                 <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-                  <ServiceItem serviceName="3D Arts" imageUrl="/Logo-3D.png"/>
+                  <ServiceItem href="/services#service-3d" serviceName="3D Arts" imageUrl="/Logo-3D.png"/>
                 </div>
                 <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-                  <ServiceItem serviceName="Game Creation" imageUrl="/Logo-Game.png"/>
+                  <ServiceItem href="/services#service-game" serviceName="Game Creation" imageUrl="/Logo-Game.png"/>
                 </div>
               </div>
             </Section>
@@ -125,6 +136,8 @@ export default function Services() {
                      asset integration. The communication throughout the project was excellent, and they met every 
                      deadline without issue. I would absolutely hire them again for my next game project!"></Testimony>
              </Section>
+
+             <RightMenu links={links}></RightMenu>
         </main>
     );
 }

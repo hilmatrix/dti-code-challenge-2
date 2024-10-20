@@ -1,8 +1,16 @@
 
+import RightMenu from "@/components/rightMenu";
 import Section from "@/components/section";
 import TeamMember from "@/components/teamMember";
 
 export default function Teams() {
+    const links = [
+      {href : "#", label : "Back to Top"},
+      {href : "#meet", label : "Meet the Team"},
+      {href : "#team-members", label : "Team Members"},
+      {href : "/", label : "Back to Home"},
+    ];
+
     return (
         <main>
             <Section id="meet" title="Meet the Team at Numinus Artspace" mode="dark">
@@ -34,6 +42,8 @@ export default function Teams() {
                   characters and scenes. Their work ensures that every model interacts fluidly with 
                   the game world, creating dynamic and immersive experiences."></TeamMember>
               </Section>
+
+              <RightMenu links={links}></RightMenu>
         </main>
     );
 }

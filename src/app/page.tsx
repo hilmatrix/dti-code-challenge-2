@@ -1,5 +1,3 @@
-"use client"
-
 import RightMenu from "../components/rightMenu/index";
 import ServiceItem from "../components/serviceItem/index";
 import Testimony from "../components/testimony/index";
@@ -15,6 +13,13 @@ import "./globals.css";
 config.autoAddCss = false;
 
 export default function Home() {
+  const links = [
+    {href : "#", label : "Back to Top"},
+    {href : "#services", label : "Services"},
+    {href : "#company-overview", label : "Overview"},
+    {href : "#works", label : "Works"},
+    {href : "#testimonials", label : "Testimonials"},
+  ];
 
   return (
     <main className={`relative`}>
@@ -24,13 +29,13 @@ export default function Home() {
       <Section id="servies" title="Out Services" mode="light">
         <div className="h-[400px] md:min-h-[300px] flex relative justify-center flex-col md:flex-row">
           <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-            <ServiceItem serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
+            <ServiceItem href="/services#service-2d" serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
           </div>
           <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-            <ServiceItem serviceName="3D Arts" imageUrl="/Logo-3D.png"/>
+            <ServiceItem href="/services#service-3d" serviceName="3D Arts" imageUrl="/Logo-3D.png"/>
           </div>
           <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
-            <ServiceItem serviceName="Game Creation" imageUrl="/Logo-Game.png"/>
+            <ServiceItem href="/services#service-game" serviceName="Game Creation" imageUrl="/Logo-Game.png"/>
           </div>
         </div>
       </Section>
@@ -83,7 +88,7 @@ export default function Home() {
            We can't wait to work with them on future projects!"></Testimony>
       </Section>
 
-      <RightMenu></RightMenu>
+      <RightMenu links={links}></RightMenu>
       
     </main>
   );

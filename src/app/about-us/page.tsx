@@ -1,6 +1,15 @@
+import RightMenu from "@/components/rightMenu";
 import Section from "@/components/section";
 
 export default function AboutUs() {
+     const links = [
+       {href : "#", label : "Back to Top"},
+       {href : "#company-history", label : "Company History"},
+       {href : "#milestones", label : "Milestones"},
+       {href : "#teams", label : "Team Members"},
+       {href : "/", label : "Back to Home"},
+     ];
+
     return (
         <main>
             <Section id="company-history" title="Company History" mode="dark">
@@ -22,7 +31,7 @@ export default function AboutUs() {
                 </p>
              </Section>
 
-             <Section id="teams" title="Teams" mode="dark">
+             <Section id="teams" title="Team Members" mode="dark">
                  <p className="my-4"><b>Hilman Mauludin</b>,<i>Game Programmer</i>, Oversees all technical aspects of game development, 
                  ensuring smooth performance, coding game mechanics, and integrating visual assets into the game engine.</p>
 
@@ -35,6 +44,9 @@ export default function AboutUs() {
                  <p className="my-4"><b>Reihan</b>,<i>3D Animator</i>, Brings movement and life to the 3D models, ensuring they interact 
                  fluidly within the game environments, enhancing immersion and player experience. </p>
              </Section>
+
+
+             <RightMenu links={links}></RightMenu>
         </main>
     );
 }
