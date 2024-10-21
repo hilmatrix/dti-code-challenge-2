@@ -6,6 +6,7 @@ export default function AboutUs() {
        {href : "#", label : "Back to Top"},
        {href : "#company-history", label : "Company History"},
        {href : "#milestones", label : "Milestones"},
+       {href : "#culture", label : "Our Culture"},
        {href : "#teams", label : "Team Members"},
        {href : "/", label : "Back to Home"},
      ];
@@ -31,7 +32,16 @@ export default function AboutUs() {
                 </p>
              </Section>
 
-             <Section id="teams" title="Team Members" mode="dark">
+             <Section id="culture" title="Our Culture" mode="dark">
+                <p className="text-justify">
+                At Numinus Artspace, creativity drives everything we do. Our work culture is collaborative, open, and flexible, 
+                allowing each team member to express their ideas and contribute to the projects. We believe in fostering an environment
+                 where experimentation and innovation thrive. As a small team, we are adaptable and fast-moving, always pushing the
+                  limits of our abilities to create games that challenge, entertain, and inspire players around the world.
+                </p>
+             </Section>
+
+             <Section id="teams" title="Team Members" mode="light">
                  <p className="my-4"><b>Hilman Mauludin</b>,<i>Game Programmer</i>, Oversees all technical aspects of game development, 
                  ensuring smooth performance, coding game mechanics, and integrating visual assets into the game engine.</p>
 
