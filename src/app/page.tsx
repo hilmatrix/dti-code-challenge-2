@@ -23,8 +23,8 @@ export default function Home() {
 
   return (
     <main className={`relative`}>
-      <Hero companyTitle="Numinus Artspace" companyTagline="Crafting Imagination into Reality" 
-        videoWidth={800} textStyle="text-white"></Hero>
+      <Hero companyTitle="Numinus Artspace" companyTagline="Crafting Imagination into Reality"  
+        videoUrl="/Hero.mp4"  videoWidth={"800"} textStyle="text-white"></Hero>
 
       <Section id="servies" title="Our Services" mode="light">
         <div className="h-[400px] md:min-h-[300px] flex relative justify-center flex-col md:flex-row">

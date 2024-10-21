@@ -3,15 +3,16 @@ interface Props {
     companyTitle : string;
     companyTagline : string;
     textStyle : string;
-    videoWidth : number;
+    videoWidth : string;
+    videoUrl : string;
 }
 
 export default function Hero(props : Props) {
     return (
         <section id="hero">
               <div className="flex justify-center bg-charcoal-gray relative md:pb-[40px]">
-                  <video  muted autoPlay loop className={`max-w-[${props.videoWidth.toString()}px] w-full`}>
-                      <source src="/Hero.mp4" type="video/mp4" />
+                  <video  muted autoPlay loop className={`max-w-[` +props.videoWidth+`px] w-full`}>
+                      <source src={props.videoUrl} type="video/mp4" />
                       Your browser does not support the video tag.
                   </video>
                   <div className="w-[100%] h-[100%] z-2 bg-charcoal-gray-alpha absolute"></div>
