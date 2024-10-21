@@ -26,7 +26,7 @@ export default function Home() {
       <Hero companyTitle="Numinus Artspace" companyTagline="Crafting Imagination into Reality" 
         videoWidth={800} textStyle="text-white"></Hero>
 
-      <Section id="servies" title="Out Services" mode="light">
+      <Section id="servies" title="Our Services" mode="light">
         <div className="h-[400px] md:min-h-[300px] flex relative justify-center flex-col md:flex-row">
           <div className="min-h-[33%] min-w-[100%] md:min-h-[100%] md:min-w-[33%]">
             <ServiceItem href="/services#service-2d" serviceName="2D Arts" imageUrl="/Logo-2D.png"/>
