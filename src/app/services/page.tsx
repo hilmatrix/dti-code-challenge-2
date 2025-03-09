@@ -4,7 +4,13 @@ import Image from "next/image";
 import ServiceItem from "../../components/serviceItem/index";
 //import WorkGame from "../../components/workGame/index";
 
-const WorkGame = ({ imageLink, hyperLink, workName }) => (
+interface WorkGameProps {
+  imageLink : string;
+  hyperLink : string;
+  workName : string;
+}
+
+const WorkGame = ({ imageLink, hyperLink, workName } : WorkGameProps) => (
   <div className="flex flex-col items-center p-4 border rounded-lg shadow-lg bg-white">
     <Image src={imageLink} width={400} height={400} alt={workName} className="rounded-lg" />
     <a href={hyperLink} target="_blank" rel="noopener noreferrer" className="mt-2 text-blue-600 font-semibold hover:underline">{workName}</a>
