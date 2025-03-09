@@ -7,11 +7,11 @@ interface Parameters {
     hyperLink : string,
 }
 
-export default function Work(parameters : Parameters) {
+export default function workGame(parameters : Parameters) {
     return (
-        <div className="h-[180px] md:h-[100px] my-4 flex flex-col md:flex-row">
+        <div className="h-[300px] md:h-[300px] my-4 flex flex-col md:flex-row">
             <div className='flex justify-center md:justify-left'>
-                <Image src={parameters.imageLink} alt={parameters.workName} width={300} height={100} className='rounded-[12px]'></Image>
+                <Image src={parameters.imageLink} alt={parameters.workName} width={320} height={500} className='rounded-[12px]'></Image>
             </div>
             <div className='flex flex-col items-center md:items-start md:m-4'>
                 <span className='font-semibold '>{parameters.workName}</span>

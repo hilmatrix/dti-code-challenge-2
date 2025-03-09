@@ -1,7 +1,7 @@
 import RightMenu from "../components/rightMenu/index";
 import ServiceItem from "../components/serviceItem/index";
 import Testimony from "../components/testimony/index";
-import WorkItem from "../components/workItem/index";
+import WorkItem from "../components/workGame/index";
 
 import Hero from "@/components/hero";
 import LineSeparator from "@/components/lineSeparator";
