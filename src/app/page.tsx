@@ -1,16 +1,56 @@
 import RightMenu from "../components/rightMenu/index";
 import ServiceItem from "../components/serviceItem/index";
-import Testimony from "../components/testimony/index";
-import WorkItem from "../components/workGame/index";
 
 import Hero from "@/components/hero";
-import LineSeparator from "@/components/lineSeparator";
 import Section from "@/components/section";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import Image from "next/image";
 import "./globals.css";
 
 config.autoAddCss = false;
+
+const WorkGame = ({ imageLink, hyperLink, workName }) => (
+  <div className="flex flex-col items-center p-4 border rounded-lg shadow-lg bg-white">
+    <Image src={imageLink} width={400} height={400} alt={workName} className="rounded-lg" />
+    <a href={hyperLink} target="_blank" rel="noopener noreferrer" className="mt-2 text-blue-600 font-semibold hover:underline">{workName}</a>
+  </div>
+);
+
+function WorksSection() {
+  return (
+    <Section id="works" title="Our Works" mode="light">
+      <div className="max-w-5xl mx-auto">
+        {/* 2D Works */}
+        <h1 className="font-semibold text-2xl text-center mb-4">2D Works</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+          <Image src="/work-image-1.jpg" width={400} height={400} alt="work-1" className="rounded-lg shadow-md" />
+          <Image src="/work-image-2.jpg" width={400} height={400} alt="work-2" className="rounded-lg shadow-md" />
+          <Image src="/work-image-3.jpg" width={400} height={400} alt="work-3" className="rounded-lg shadow-md" />
+        </div>
+
+        {/* 3D Works */}
+        <h1 className="font-semibold text-2xl text-center mt-10 mb-4">3D Works</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+          <Image src="/work-3d-1.jpg" width={400} height={400} alt="work-3d-1" className="rounded-lg shadow-md" />
+          <Image src="/work-3d-2.jpg" width={400} height={400} alt="work-3d-2" className="rounded-lg shadow-md" />
+          <Image src="/work-3d-3.jpg" width={400} height={400} alt="work-3d-3" className="rounded-lg shadow-md" />
+        </div>
+
+        {/* Games */}
+        <h1 className="font-semibold text-2xl text-center mt-10 mb-4">Games</h1>
+        <div className="flex justify-center">
+          <WorkGame 
+            imageLink="/work-asteroid-shoother-1-v2.jpg"
+            hyperLink="https://play.unity.com/en/games/c2d59a14-dbc4-40bc-9f8a-f37d92f5e3cf/asteroid-shooter"
+            workName="Asteroid Shooter"
+          />
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 
 export default function Home() {
   const links = [
@@ -53,17 +93,9 @@ export default function Home() {
           </p>
       </Section>
 
-      <Section id="works" title="Our Works" mode="light">
-        <div className="flex justify-center flex-col">
-            <WorkItem imageLink="/work-asteroid-shooter.jpg"
-              hyperLink="https://play.unity.com/en/games/c2d59a14-dbc4-40bc-9f8a-f37d92f5e3cf/asteroid-shooter"
-              workName="Asteroid Shooter"></WorkItem>
-            <WorkItem imageLink="/work-rescue-game.jpg"
-              hyperLink="https://hilmatrix-game-rescue.vercel.app/"
-              workName="Rescue Game"></WorkItem>
-        </div>
-      </Section>
+      <WorksSection/>
 
+      {/*
       <Section id="testimonials" title="Testimonials" mode="dark">
          <Testimony jobTitle="Lead Developer at Skybound Games"
            testimony="Working with Numinus Artspace has been a game-changer for our indie studio.
@@ -87,7 +119,7 @@ export default function Home() {
            a visual style that perfectly captured the fun and quirky nature of our game.
            We can't wait to work with them on future projects!"></Testimony>
       </Section>
-
+          */}
       <RightMenu links={links}></RightMenu>
       
     </main>

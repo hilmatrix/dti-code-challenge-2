@@ -1,7 +1,5 @@
-import LineSeparator from "@/components/lineSeparator";
 import RightMenu from "@/components/rightMenu";
 import Section from "@/components/section";
-import Testimony from "@/components/testimony";
 import Image from "next/image";
 import ServiceItem from "../../components/serviceItem/index";
 //import WorkGame from "../../components/workGame/index";
@@ -146,6 +144,7 @@ export default function Services() {
                  </ul>
              </Section>
 
+             {/* 
              <Section id="testimonials" title="Testimonials" mode="light">
                    <Testimony jobTitle="Indie Game Developer"
                      testimony="Working with Numinus Artspace was an absolute pleasure! Their 2D artist and animator brought my 
@@ -171,6 +170,7 @@ export default function Services() {
                      asset integration. The communication throughout the project was excellent, and they met every 
                      deadline without issue. I would absolutely hire them again for my next game project!"></Testimony>
              </Section>
+             */}
 
              <RightMenu links={links}></RightMenu>
         </main>

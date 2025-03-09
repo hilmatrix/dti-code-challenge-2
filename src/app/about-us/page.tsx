@@ -39,7 +39,7 @@ export default function AboutUs() {
                  where experimentation and innovation thrive. As a small team, we are adaptable and fast-moving, always pushing the
                   limits of our abilities to create games that challenge, entertain, and inspire players around the world.
                 </p>
-             </Section>
+             </Section> 
 
              <Section id="teams" title="Team Members" mode="light">
                  <p className="my-4"><b>Hilman Mauludin</b>,<i>Game Programmer</i>, Oversees all technical aspects of game development, 
@@ -54,7 +54,6 @@ export default function AboutUs() {
                  <p className="my-4"><b>Reihan</b>,<i>3D Animator</i>, Brings movement and life to the 3D models, ensuring they interact 
                  fluidly within the game environments, enhancing immersion and player experience. </p>
              </Section>
-
 
              <RightMenu links={links}></RightMenu>
         </main>
