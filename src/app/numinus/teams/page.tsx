@@ -9,7 +9,7 @@ export default function Teams() {
       {href : "#", label : "Back to Top"},
       {href : "#meet", label : "Meet the Team"},
       {href : "#team-members", label : "Team Members"},
-      {href : "/", label : "Back to Home"},
+      {href : "/numinus", label : "Back to Home"},
     ];
 
     return (

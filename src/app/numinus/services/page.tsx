@@ -1,7 +1,7 @@
 import RightMenu from "@/components/rightMenu";
 import Section from "@/components/section";
+import ServiceItem from "@/components/serviceItem/index";
 import Image from "next/image";
-import ServiceItem from "../../components/serviceItem/index";
 //import WorkGame from "../../components/workGame/index";
 
 interface WorkGameProps {
@@ -60,7 +60,7 @@ export default function Services() {
       {href : "#service-3d", label : "3D Art Service"},
       {href : "#service-game", label : "Game Service"},
       {href : "#testimonials", label : "Testimonials"},
-      {href : "/", label : "Back to Home"},
+      {href : "/numinus", label : "Back to Home"},
     ];
 
     return (

@@ -14,10 +14,10 @@ export default function Header() {
           </div>  
           <nav className={`w-[80%] md:w-[40%]`}>
             <ul className="flex text-white justify-around">
-                <li><Link href="/" className={pathname === "/" ? "underline" : ""}>Home</Link></li>
-                <li><Link href="/about-us" className={pathname === "/about-us" ? "underline" : ""}>About Us</Link></li>
-                <li><Link href="/services" className={pathname === "/services" ? "underline" : ""}>Services</Link></li>
-                <li><Link href="/teams" className={pathname === "/teams" ? "underline" : ""}>Teams</Link></li>
+                <li><Link href="/numinus" className={pathname === "/" ? "underline" : ""}>Home</Link></li>
+                <li><Link href="/numinus/about-us" className={pathname === "/about-us" ? "underline" : ""}>About Us</Link></li>
+                <li><Link href="/numinus/services" className={pathname === "/services" ? "underline" : ""}>Services</Link></li>
+                <li><Link href="/numinus/teams" className={pathname === "/teams" ? "underline" : ""}>Teams</Link></li>
             </ul>
           </nav>
         </header>

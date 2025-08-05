@@ -1,4 +1,5 @@
 // src/app/cardventure/privacy/page.tsx
+import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -26,6 +27,15 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <p className="mt-8 text-gray-600">Hilmatrix Studio</p>
+
+      <div className="mt-8">
+        <Link
+          href="/cardventure"
+          className="text-blue-600 hover:underline"
+        >
+          ← Back to Cardventure
+        </Link>
+      </div>
     </main>
   );
 }

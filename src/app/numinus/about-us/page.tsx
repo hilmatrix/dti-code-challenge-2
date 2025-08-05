@@ -8,7 +8,7 @@ export default function AboutUs() {
        {href : "#milestones", label : "Milestones"},
        {href : "#culture", label : "Our Culture"},
        {href : "#teams", label : "Team Members"},
-       {href : "/", label : "Back to Home"},
+       {href : "/numinus", label : "Back to Home"},
      ];
 
     return (
